@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>गुरुकुल क्लासेस – शिक्षणाची नवी दिशा</title>
+
+  <!-- Google Fonts (Enhanced Devanagari + Modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Modak&family=Baloo+Da+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary: #0052a1;
+      --primary-light: #e8f2ff;
+      --secondary: #ff8c4a;
+      --accent: #f05a9a;
+      --success: #28a745;
+      --warning: #ffc107;
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --dark: #192734;
+      --muted: #6c757d;
+      --radius: 1.2rem;
+      --radius-lg: 1.8rem;
+      --shadow: 0 8px 30px rgba(0,0,0,.08);
+      --shadow-lg: 0 15px 50px rgba(0,0,0,.12);
+      --transition: all .4s cubic-bezier(.4,0,.2,1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Baloo Da 2', cursive;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .calligraphy {
+      font-family: 'Baloo Da 2', cursive;
+      font-size: 4rem;
+      color: #ff8c4a;
+      background: none;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.18);
+      letter-spacing: 1.5px;
+    }
+
+    .handwritten {
+      font-family: 'Kalam', cursive;
+      font-weight: 400;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      z-index: 2000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      min-height: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 88px;
+    }
+
+    .navbar-brand {
+      font-family: 'Modak', cursive;
+      font-size: 2.8rem;
+      color: var(--primary) !important;
+      text-decoration: none;
+      transition: font-size 0.3s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar-brand img {
+      height: 100px !important;
+      width: auto;
+      max-height: 100px;
+      margin-right: 0.5rem;
+      transition: height 0.3s;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--dark) !important;
+      padding: 0.75rem 1.2rem !important;
+      border-radius: 25px;
+      transition: var(--transition);
+      margin: 0 0.2rem;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background: var(--primary-light);
+      color: var(--primary) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-toggler {
+      border: none;
+      background: transparent !important;
+      outline: none !important;
+      box-shadow: none !important;
+      margin-left: auto;
+      margin-right: 0;
+      padding: 0.6rem 1rem;
+      height: 56px;
+      width: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1100;
+    }
+
+    .navbar-toggler:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar {
+        padding: 0.5rem 1rem;
+        min-height: 62px;
+        height: 62px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        z-index: 2000;
+      }
+      .navbar .container {
+        min-height: 62px;
+      }
+      .navbar-brand {
+        font-size: 1.3rem !important;
+        padding: 0.3rem 0;
+      }
+      .navbar-brand img {
+        height: 64px !important;
+        max-height: 64px;
+      }
+      .navbar-collapse {
+        background: rgba(255,255,255,0.98);
+        box-shadow: 0 8px 30px rgba(0,0,0,.08);
+        margin-top: 0.5rem;
+        border-radius: 0 0 1rem 1rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 62px;
+        width: 100vw;
+        min-width: 220px;
+        z-index: 2100;
+        padding: 0.5rem 1rem;
+        transition: box-shadow 0.3s, background 0.3s;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .navbar-collapse {
+        position: static !important;
+        width: auto !important;
+        min-width: unset !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        margin-top: 0 !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+      }
+      .nav-link {
+        padding: 0.7rem 1rem !important;
+        margin: 0.2rem 0;
+        border-radius: 18px;
+        text-align: left;
+      }
+      .navbar-toggler {
+        margin-right: 0;
+        margin-left: auto;
+        padding: 0.4rem 0.7rem;
+        height: 40px;
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      /* About section image/text stacking fix */
+      #about .row {
+        flex-direction: column !important;
+      }
+      #about .col-lg-6:first-child {
+        margin-bottom: 2rem;
+      }
+      #about .col-lg-6:last-child {
+        margin-top: 0;
+      }
+      .navbar {
+        min-height: 76px;
+        height: 76px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        z-index: 2000;
+      }
+      .navbar .container {
+        min-height: 76px;
+      }
+      .navbar-brand {
+        font-size: 1.3rem !important;
+        padding: 0.3rem 0;
+      }
+      .navbar-brand img {
+        height: 54px !important;
+        max-height: 54px;
+        margin-right: 0.5rem;
+      }
+      .navbar-collapse {
+        padding: 0.7rem 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 76px;
+        width: 100vw;
+        z-index: 2100;
+      }
+      .brand-text {
+        display: none !important;
+      }
+      .navbar-toggler {
+        height: 48px;
+        width: 48px;
+        padding: 0.3rem 0.7rem;
+      }
+      body {
+        padding-top: 76px;
+      }
+      .hero-section {
+        padding-top: 0;
+      }
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    @media (max-width: 991.98px) {
+      body {
+        padding-top: 68px;
+      }
+      .hero-section {
+        min-height: 72vh;
+        padding-top: 1.5rem;
+      }
+    }
+
+    /* Buttons */
+    .btn-primary-custom {
+      background: linear-gradient(135deg, var(--primary), #337bd9);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    .btn-outline-custom {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      border-radius: 50px;
+      padding: 1rem 2.2rem;
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(0, 82, 161, 0.9), rgba(255, 140, 74, 0.8)), 
+                  url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80') center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      min-width: 120px;
+    }
+
+    .hero-stat h3 {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Sections */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Cards */
+    .card-modern {
+      background: var(--surface);
+      border: none;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .card-modern:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      margin: 0 auto 1.5rem;
+      transition: var(--transition);
+    }
+
+    .card-modern:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* About Section */
+    .about-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    @media (min-width: 992px) {
+      .about-image img {
+        height: 720px;
+      }
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-highlight {
+      background: var(--primary-light);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border-left: 5px solid var(--primary);
+      margin: 2rem 0;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Subjects Section */
+    .subjects-section {
+      background: linear-gradient(135deg, var(--bg) 0%, #e8f4f8 100%);
+    }
+
+    .subject-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .subject-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .subject-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 0.9;
+    }
+
+    .gallery-overlay i {
+      color: white;
+      font-size: 2rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 4rem;
+      color: var(--primary);
+      font-family: 'Times New Roman', serif;
+    }
+
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--surface);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: var(--radius);
+      padding: 1rem;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.2rem rgba(0, 82, 161, 0.25);
+    }
+
+    .contact-info {
+      background: var(--surface);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: var(--radius);
+      background: var(--primary-light);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateX(10px);
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover i {
+      color: white;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--primary), #337bd9);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer h5 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+      padding-left: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .hero-stats {
+        justify-content: center;
+      }
+      
+      .contact-form,
+      .contact-info {
+        padding: 2rem;
+      }
+      
+      .calligraphy {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Additional Utilities */
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bg-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .lift:hover {
+      transform: translateY(-10px);
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <img src="assets/logo.png" alt="Gurukul Logo" style="height:50px;">
+        <span class="brand-text">गुरुकुल क्लासेस</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="visually-hidden">मेनू टॉगल करा</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">मुखपृष्ठ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">आमच्याबद्दल</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#subjects">विषय</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">वैशिष्ट्ये</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">गॅलरी</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">अभिप्राय</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">संपर्क</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 hero-content" data-aos="fade-right">
+          <h1 class="calligraphy hero-title">प्रवेश सुरू!</h1>
+          <h2 class="hero-subtitle handwritten">शालेय शिक्षणासोबत स्पर्धेची तयारी म्हणजे एकच ठिकाण</h2>
+          <p class="lead mb-4">
+            गुरुकुल क्लासेस - जिथे प्रत्येक विद्यार्थ्याचे स्वप्न साकार होते. आम्ही फक्त शिकवत नाही, तर भविष्याची तयारी करतो.
+          </p>
+          
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="#contact" class="btn-primary-custom">
+              <i class="bi bi-telephone me-2"></i>आता संपर्क करा
+            </a>
+            <a href="#about" class="btn-outline-custom">
+              <i class="bi bi-info-circle me-2"></i>अधिक जाणून घ्या
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="hero-stat" data-aos="zoom-in" data-aos-delay="200">
+              <h3>३+</h3>
+              <span>वर्षांचा अनुभव</span>
+            </div>
+            <div class="hero-stat" data-aos="zoom-in" data-aos-delay="300">
+              <h3>५००+</h3>
+              <span>यशस्वी विद्यार्थी</span>
+            </div>
+            <div class="hero-stat" data-aos="zoom-in" data-aos-delay="400">
+              <h3>१००%</h3>
+              <span>यश दर</span>
+            </div>
+            <div class="hero-stat" data-aos="zoom-in" data-aos-delay="500">
+              <h3>टॉप</h3>
+              <span>गुणवत्ता</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-image">
+            <img src="assets/02-0436295-65bd788ce1cfb.png" alt="Gurukul Classes" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="about-image">
+            <img src="assets/about_us.png" alt="About Gurukul Classes" class="img-fluid">
+          </div>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-left">
+          <h2 class="section-title text-start">गुरुकुल क्लासेस बद्दल</h2>
+          <p class="section-subtitle text-start">
+            आम्ही केवळ शिक्षण देत नाही, तर जीवनाची दिशा देतो
+          </p>
+          
+          <div class="about-highlight">
+            <h5 class="text-gradient">आमचे ध्येय</h5>
+            <p class="handwritten">"प्रत्येक मुलामध्ये असलेली प्रतिभा ओळखून तिला योग्य दिशा देणे"</p>
+          </div>
+          
+          <p>
+            गुरुकुल क्लासेस सातत्याने गेली तीन वर्षे राज्यस्तरीय, जिल्हास्तरीय व तालुकास्तरीय गुणवत्तायादीत 
+            विद्यार्थ्यांचे यश मिळवत आहे. आम्ही फक्त परीक्षेसाठी तयारी करत नाही, तर संपूर्ण व्यक्तिमत्व विकासावर भर देतो.
+          </p>
+          
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+              <strong>वैयक्तिक लक्ष:</strong> प्रत्येक विद्यार्थ्याला स्वतंत्र मार्गदर्शन
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+              <strong>आधुनिक शिक्षण पद्धती:</strong> तंत्रज्ञानासह अभ्यास
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+              <strong>नियमित मूल्यांकन:</strong> साप्ताहिक चाचण्या व प्रगती अहवाल
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check2-circle text-success me-2 fs-5"></i>
+              <strong>पालक संवाद:</strong> नियमित पालक-शिक्षक भेटी
+            </li>
+          </ul>
+          
+          <a href="#features" class="btn-primary-custom">
+            <i class="bi bi-arrow-right me-2"></i>आमची वैशिष्ट्ये पहा
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section id="subjects" class="section subjects-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">विषय आणि वर्ग</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        इयत्ता १ ली ते ७ वी पर्यंत सर्व विषयांचे संपूर्ण अभ्यासक्रम
+      </p>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-book"></i>
+            </div>
+            <h4>मराठी</h4>
+            <p>व्याकरण, साहित्य, निबंध लेखन आणि भाषा कौशल्य विकास</p>
+            <ul class="list-unstyled text-start">
+              <li>• व्याकरण मास्टरी</li>
+              <li>• कविता व कथा</li>
+              <li>• निबंध व पत्र लेखन</li>
+              <li>• वाचन कौशल्य</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-globe"></i>
+            </div>
+            <h4>English</h4>
+            <p>Grammar, Vocabulary, Reading & Writing Skills Development</p>
+            <ul class="list-unstyled text-start">
+              <li>• Grammar Foundation</li>
+              <li>• Vocabulary Building</li>
+              <li>• Comprehension</li>
+              <li>• Creative Writing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-calculator"></i>
+            </div>
+            <h4>गणित</h4>
+            <p>संख्या, बीजगणित, भूमिती आणि समस्या समाधान तंत्र</p>
+            <ul class="list-unstyled text-start">
+              <li>• मूलभूत संकल्पना</li>
+              <li>• जलद गणना तंत्र</li>
+              <li>• समस्या समाधान</li>
+              <li>• Mental Math</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <h4>भूगोल</h4>
+            <p>भौगोलिक संकल्पना, नकाशे आणि पर्यावरण अभ्यास</p>
+            <ul class="list-unstyled text-start">
+              <li>• भौगोलिक संकल्पना</li>
+              <li>• नकाशा वाचन</li>
+              <li>• हवामान व वातावरण</li>
+              <li>• पर्यावरण संरक्षण</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h4>इतिहास</h4>
+            <p>ऐतिहासिक घटना, व्यक्तिमत्वे आणि सांस्कृतिक वारसा</p>
+            <ul class="list-unstyled text-start">
+              <li>• ऐतिहासिक घटना</li>
+              <li>• महान व्यक्तिमत्वे</li>
+              <li>• सांस्कृतिक वारसा</li>
+              <li>• कालगणना</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
+          <div class="subject-card">
+            <div class="subject-icon">
+              <i class="bi bi-lightbulb"></i>
+            </div>
+            <h4>विज्ञान</h4>
+            <p>प्रयोग, शोध आणि वैज्ञानिक दृष्टिकोन विकास</p>
+            <ul class="list-unstyled text-start">
+              <li>• प्रयोगशाळा कार्य</li>
+              <li>• वैज्ञानिक संकल्पना</li>
+              <li>• निरीक्षण कौशल्य</li>
+              <li>• तर्कशुद्ध चिंतन</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">आमची वैशिष्ट्ये</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        का निवडावे गुरुकुल क्लासेस? इथे आहेत आमच्या खास गोष्टी
+      </p>
+      
+      <div class="features-grid">
+        <div class="card-modern" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <i class="bi bi-trophy-fill"></i>
+          </div>
+          <h4>स्पर्धा परीक्षा तयारी</h4>
+          <p>राज्यस्तरीय, राष्ट्रीय स्तरावरील NTSE, स्कॉलरशिप, गणित ऑलिम्पियाड यासाठी विशेष प्रशिक्षण वर्ग.</p>
+          <ul class="list-unstyled">
+            <li>• NTSE तयारी</li>
+            <li>• स्कॉलरशिप परीक्षा</li>
+            <li>• गणित ऑलिम्पियाड</li>
+            <li>• विज्ञान प्रश्नमंजुषा</li>
+          </ul>
+        </div>
+        
+        <div class="card-modern" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
+            <i class="bi bi-journal-check"></i>
+          </div>
+          <h4>नियमित मूल्यांकन</h4>
+          <p>साप्ताहिक चाचण्या, मासिक परीक्षा आणि त्वरित निकाल प्रणाली. पालकांना SMS द्वारे अहवाल.</p>
+          <ul class="list-unstyled">
+            <li>• साप्ताहिक चाचण्या</li>
+            <li>• मासिक परीक्षा</li>
+            <li>• प्रगती अहवाल</li>
+            <li>• पालक संवाद</li>
+          </ul>
+        </div>
+        <div class="card-modern" data-aos="fade-up" data-aos-delay="500">
+          <div class="feature-icon" style="background: linear-gradient(135deg, var(--warning), #fd7e14);">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h4>आधुनिक शिक्षण साधने</h4>
+          <p>Smart Board, प्रोजेक्टर, ऑनलाइन अभ्यास साहित्य आणि इंटरॅक्टिव लर्निंग टूल्स.</p>
+          <ul class="list-unstyled">
+            <li>• Smart Board शिक्षण</li>
+            <li>• प्रोजेक्टर प्रेझेंटेशन</li>
+            <li>• ऑनलाइन अभ्यास</li>
+            <li>• इंटरॅक्टिव लर्निंग</li>
+          </ul>
+        </div>
+        
+        <div class="card-modern" data-aos="fade-up" data-aos-delay="700">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #6f42c1, #e83e8c);">
+            <i class="bi bi-award"></i>
+          </div>
+          <h4>व्यक्तिमत्व विकास</h4>
+          <p>शैक्षणिक विषयांसोबतच आत्मविश्वास, नेतृत्व आणि सामाजिक कौशल्यांचा विकास.</p>
+          <ul class="list-unstyled">
+            <li>• आत्मविश्वास निर्माण</li>
+            <li>• नेतृत्व गुण</li>
+            <li>• सामाजिक कौशल्य</li>
+            <li>• सृजनशीलता विकास</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section subjects-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">आमची गॅलरी</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        गुरुकुल क्लासेसमधील आनंदमय शिक्षणाचे काही क्षण
+      </p>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/9.png" alt="Gallery Image 1">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <img src="assets/10.png" alt="Gallery Image 2">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+          <img src="assets/6.png" alt="Gallery Image 3">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+          <img src="assets/5.png" alt="Gallery Image 4">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+          <img src="assets/4.png" alt="Gallery Image 5">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+          <img src="assets/2.png" alt="Gallery Image 6">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
+          <img src="assets/1.png" alt="Gallery Image 7">
+          <div class="gallery-overlay">
+        <i class="bi bi-zoom-in"></i>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">पालक आणि विद्यार्थ्यांचे अभिप्राय</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        आमच्या विद्यार्थ्यांच्या यशाची कहाणी त्यांच्याच शब्दांत
+      </p>
+      
+      <div class="row g-4 d-flex align-items-stretch">
+        <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card flex-fill d-flex flex-column">
+            <div class="testimonial-avatar">
+              <i class="bi bi-person"></i>
+            </div>
+            <p class="handwritten flex-grow-1">"माझा मुलगा येथे आल्यापासून त्याच्यामध्ये खूप बदल दिसतो. त्याचा आत्मविश्वास वाढला आहे आणि अभ्यासात खूप प्रगती झाली आहे."</p>
+            <h6>श्रीमती सुनीता पाटील</h6>
+            <small class="text-muted">आर्यनची आई (इयत्ता ५ वी)</small>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card flex-fill d-flex flex-column">
+            <div class="testimonial-avatar">
+              <i class="bi bi-person"></i>
+            </div>
+            <p class="handwritten flex-grow-1">"गुरुकुल क्लासेसमध्ये फक्त अभ्यास नाही तर संपूर्ण व्यक्तिमत्व विकास होतो. शिक्षकांचे वागणे खूप छान आहे."</p>
+            <h6>श्री राजेश शर्मा</h6>
+            <small class="text-muted">अनन्याचे वडील (इयत्ता ७ वी)</small>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="testimonial-card flex-fill d-flex flex-column">
+            <div class="testimonial-avatar">
+              <i class="bi bi-person"></i>
+            </div>
+            <p class="handwritten flex-grow-1">"NTSE च्या तयारीसाठी इथल्या guidance खूप उपयुक्त ठरली. माझी मुलगी राज्यस्तरावर qualify झाली आहे."</p>
+            <h6>श्रीमती प्रिया देशमुख</h6>
+            <small class="text-muted">श्रेयाची आई (इयत्ता ६ वी)</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section subjects-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">संपर्क साधा</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        तुमच्या मुलाच्या उज्ज्वल भविष्यासाठी आजच संपर्क साधा
+      </p>
+      
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+          <div class="contact-form">
+            <h4 class="mb-4">संदेश पाठवा</h4>
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">पालकाचे नाव *</label>
+                    <input type="text" class="form-control" required placeholder="पालकाचे नाव" title="पालकाचे नाव">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">मोबाइल नंबर *</label>
+                    <input type="tel" class="form-control" required placeholder="मोबाइल नंबर" title="मोबाइल नंबर">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">ई-मेल पत्ता</label>
+                <input type="email" class="form-control" placeholder="ई-मेल पत्ता" title="ई-मेल पत्ता">
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">मुलाचे नाव</label>
+                    <input type="text" class="form-control" placeholder="मुलाचे नाव" title="मुलाचे नाव">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">इयत्ता</label>
+                    <select class="form-control" title="इयत्ता">
+                      <option value="">निवडा</option>
+                      <option value="1">इयत्ता १ ली</option>
+                      <option value="2">इयत्ता २ री</option>
+                      <option value="3">इयत्ता ३ री</option>
+                      <option value="4">इयत्ता ४ थी</option>
+                      <option value="5">इयत्ता ५ वी</option>
+                      <option value="6">इयत्ता ६ वी</option>
+                      <option value="7">इयत्ता ७ वी</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">संदेश</label>
+                <textarea class="form-control" rows="4" placeholder="आपला संदेश येथे लिहा..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn-primary-custom w-100">
+                <i class="bi bi-send me-2"></i>संदेश पाठवा
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="contact-info">
+            <h4 class="mb-4">संपर्क माहिती</h4>
+            
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h6>पत्ता</h6>
+                <p>गुरुकुल क्लासेस<br>मिस. गीताजली कुलकर्णी<br>मोरगे वस्ती , वॉर्ड नंबर ७ , श्रीरामपूर , अहिल्यानगर-४१३७०९</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <div>
+                <h6>फोन नंबर</h6>
+                <p><a href="tel:9975662027" class="text-decoration-none">९९७५६ ६२०२७</a><br><small>(कॉल किंवा मेसेज करून नोंदणी करता येईल)</small></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="bi bi-clock"></i>
+              <div>
+                <h6>वेळापत्रक</h6>
+                <p>सकाळी: ७:०० ते ९:०० वाजता<br>दुपारी: १२:०० ते २:०० वाजता<br>संध्याकाळी: ४:०० ते ६:०० वाजता<br><small>सोमवार ते शनिवार</small></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="bi bi-calendar-event"></i>
+              <div>
+                <h6>प्रवेश प्रक्रिया</h6>
+                <p>प्रवेश वर्ष २०२५-२६ मध्ये सुरू इयत्ता १ ली ते ७ वी पर्यंत्याच्या विद्यार्थ्यांसाठी परीक्षेचे मार्गदर्शन आणि शालेय अभ्यासात पॅकेज बळकटीकरण दिले जाणार आहे.</p>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <h6>सोशल मीडिया</h6>
+              <div class="social-links">
+                <a href="#" class="social-link" title="Facebook"><span class="visually-hidden">Facebook</span><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-link" title="Instagram"><span class="visually-hidden">Instagram</span><i class="bi bi-instagram"></i></a>
+                <a href="#" class="social-link" title="YouTube"><span class="visually-hidden">YouTube</span><i class="bi bi-youtube"></i></a>
+                <a href="#" class="social-link" title="WhatsApp"><span class="visually-hidden">WhatsApp</span><i class="bi bi-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h5>गुरुकुल क्लासेस</h5>
+          <p class="handwritten">जिथे प्रत्येक मुलाचे स्वप्न साकार होते!</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook"><span class="visually-hidden">Facebook</span><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" title="Instagram"><span class="visually-hidden">Instagram</span><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" title="YouTube"><span class="visually-hidden">YouTube</span><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" title="WhatsApp"><span class="visually-hidden">WhatsApp</span><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2">
+          <h5>द्रुत लिंक्स</h5>
+          <ul class="footer-links">
+            <li><a href="#home">मुखपृष्ठ</a></li>
+            <li><a href="#about">आमच्याबद्दल</a></li>
+            <li><a href="#subjects">विषय</a></li>
+            <li><a href="#features">वैशिष्ट्ये</a></li>
+            <li><a href="#contact">संपर्क</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3">
+          <h5>आमचे विषय</h5>
+          <ul class="footer-links">
+            <li><a href="#subjects">मराठी</a></li>
+            <li><a href="#subjects">English</a></li>
+            <li><a href="#subjects">गणित</a></li>
+            <li><a href="#subjects">विज्ञान</a></li>
+            <li><a href="#subjects">सामाजिक शास्त्र</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3">
+          <h5>संपर्क</h5>
+          <ul class="footer-links">
+            <li>📞 ९९७५६ ६२०२७</li>
+            <li>📍 मोरगे वस्ती , वॉर्ड नंबर ७ , श्रीरामपूर , अहिल्यानगर-४१३७०९</li>
+            <li>⏰ सकाळी ७ ते संध्याकाळी ६</li>
+            <li>📧 gurukulclasses@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr style="border-color: rgba(255,255,255,0.2); margin: 2rem 0;">
+      
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">© २०२५ गुरुकुल क्लासेस - सर्वाधिकार राखीव</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0 handwritten">शिक्षणातील गुणवत्ता, आमची जबाबदारी!</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+      } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+      }
+    });
+
+    // Active navigation link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('धन्यवाद! तुमचा संदेश आम्हाला मिळाला आहे. आम्ही लवकरच तुमच्याशी संपर्क साधू.');
+      this.reset();
+    });
+
+    // Gallery item click handler
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // Gallery modal functionality can be added here
+        console.log('Gallery item clicked');
+      });
+    });
+
+    // Console message
+    console.log('🎓 गुरुकुल क्लासेस - जिथे प्रत्येक मुलाचे स्वप्न साकार होते! 🌟');
+  </script>
+</body>
+</html>
