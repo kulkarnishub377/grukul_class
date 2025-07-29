@@ -1,3 +1,154 @@
+/* Enhanced mobile design for Top Student achievements list */
+@media (max-width: 576px) {
+  #top-students .achievements-list {
+    text-align: left;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.7em 1em 0.7em 1em;
+    margin: 0.5em 0 0.5em 0;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+    font-size: 1em;
+    line-height: 1.7;
+    display: block;
+  }
+  #top-students .achievements-list li {
+    padding: 0.7em 0.2em 0.7em 0.2em;
+    border-bottom: 1px dashed #d1d5db;
+    margin-bottom: 0.2em;
+    font-size: 1em;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  #top-students .achievements-list li > div {
+    text-align: left;
+    width: 100%;
+    word-break: break-word;
+  }
+  #top-students .achievements-list li:last-child {
+    border-bottom: none;
+  }
+}
+@media (max-width: 576px) {
+  #top-students .owl-carousel .student-card {
+    width: 97vw !important;
+    max-width: 99vw;
+    margin: 0 auto 1.7rem auto;
+    padding: 1.3rem 0.7rem 1.7rem 0.7rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #top-students .student-profile img {
+    width: 68vw !important;
+    max-width: 110px;
+    min-width: 70px;
+    height: auto !important;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-width: 2.5px !important;
+    margin-bottom: 0.7rem;
+  }
+  #top-students .student-card h4,
+  #top-students .student-card .handwritten,
+  #top-students .student-card .student-school {
+    text-align: center;
+    width: 100%;
+    font-size: 1.13em;
+  }
+  #top-students .achievements-list {
+    font-size: 1.04em !important;
+    padding-left: 0.2em;
+    margin-left: 0;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    background: #f8f9fa;
+    border-radius: 0.8em;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.06);
+    padding: 0.7em 0.7em 0.7em 0.7em;
+  }
+  #top-students .achievements-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.85em;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 0.5em;
+    padding-left: 0.2em;
+    background: none;
+  }
+  #top-students .achievements-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  #top-students .achievements-list li span:last-child {
+    display: none;
+  }
+  #top-students .achievements-list li div span[style*="font-weight:600"] {
+    color: #0052a1;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0.1em;
+    display: block;
+  }
+  #top-students .achievements-list li div span:not([style*="font-weight:600"]) {
+    color: #222;
+    font-size: 0.98em;
+    font-weight: 400;
+    display: block;
+    margin-top: 0.1em;
+  }
+}
+/* Responsive fixes for Top Students cards and images on mobile */
+@media (max-width: 576px) {
+  #top-students .owl-carousel .student-card {
+    width: 95vw !important;
+    max-width: 98vw;
+    margin: 0 auto 1.5rem auto;
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #top-students .student-profile img {
+    width: 70vw !important;
+    max-width: 120px;
+    min-width: 80px;
+    height: auto !important;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-width: 2.5px !important;
+    margin-bottom: 0.7rem;
+  }
+  #top-students .student-card h4,
+  #top-students .student-card .handwritten,
+  #top-students .student-card .student-school {
+    text-align: center;
+    width: 100%;
+    font-size: 1.1em;
+  }
+  #top-students .achievements-list {
+    font-size: 0.98em !important;
+    padding-left: 0.2em;
+    margin-left: 0;
+  }
+  #top-students .achievements-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5em;
+  }
+  #top-students .achievements-list li span:last-child {
+    display: none;
+  }
+}
     :root{
       --primary: #0052a1;
       --primary-light: #e8f2ff;  
