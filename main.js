@@ -122,17 +122,24 @@
     
     // Add counter animation for hero stats
     function animateCounter(element, target) {
-      let current = 0;
-      const increment = target / 100;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          element.textContent = target;
-          clearInterval(timer);
+      const duration = 2000; // Fixed 2 second duration
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(progress * target);
+        element.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
         } else {
-          element.textContent = Math.ceil(current);
+          element.textContent = target;
         }
-      }, 20);
+      }
+      
+      requestAnimationFrame(update);
     }
     
     // Trigger counter animation when stats become visible
@@ -144,11 +151,14 @@
       entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
           entry.target.classList.add('animated');
-          const statsText = entry.target.querySelector('h3').textContent;
-          const number = parseInt(statsText.replace(/\D/g, ''));
-          if (number) {
-            entry.target.querySelector('h3').textContent = '0';
-            animateCounter(entry.target.querySelector('h3'), number);
+          const h3Element = entry.target.querySelector('h3');
+          if (h3Element) {
+            const statsText = h3Element.textContent;
+            const number = parseInt(statsText.replace(/\D/g, ''));
+            if (number && !isNaN(number)) {
+              h3Element.textContent = '0';
+              animateCounter(h3Element, number);
+            }
           }
         }
       });
