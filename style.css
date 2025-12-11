@@ -875,6 +875,7 @@
       height: 5px;
       background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
       background-size: 200% 100%;
+      will-change: background-position;
       animation: gradientShift 3s ease infinite;
     }
     

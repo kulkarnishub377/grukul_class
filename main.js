@@ -19,15 +19,35 @@
       });
     });
 
-    // Navbar scroll effect
+      
+    // Combine scroll handlers for better performance
+    let ticking = false;
     window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-      } else {
-        navbar.classList.remove('scrolled');
-        navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          const scrolled = window.pageYOffset;
+          
+          // Navbar scroll effect
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            if (scrolled > 50) {
+              navbar.classList.add('scrolled');
+              navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+              navbar.classList.remove('scrolled');
+              navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+            }
+          }
+          
+          // Parallax effect on hero section
+          const hero = document.querySelector('.hero-section');
+          if (hero && scrolled < window.innerHeight) {
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
       }
     });
 
@@ -111,15 +131,6 @@
         );
       });
       
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero-section');
-      if (hero) {
-        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
-      }
-    });
-    
     // Add counter animation for hero stats
     function animateCounter(element, target) {
       const duration = 2000; // Fixed 2 second duration
@@ -155,7 +166,7 @@
           if (h3Element) {
             const statsText = h3Element.textContent;
             const number = parseInt(statsText.replace(/\D/g, ''));
-            if (number && !isNaN(number)) {
+            if (!isNaN(number) && number > 0) {
               h3Element.textContent = '0';
               animateCounter(h3Element, number);
             }
