@@ -1,8 +1,14 @@
 {
   "hosting": {
-    "public": "y",
+    "public": ".",
     "ignore": [
       "firebase.json",
+      ".firebaserc",
+      ".hintrc",
+      "README.md",
+      "sitemap.xml",
+      ".github/**",
+      ".git/**",
       "**/.*",
       "**/node_modules/**"
     ],
