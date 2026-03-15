@@ -1103,7 +1103,7 @@ a { text-decoration: none; transition: var(--transition); }
   font-size: 1.3rem;
 }
 
-.form-group-custom { margin-bottom: 4px; }
+.form-group-custom { margin-bottom: 16px; }
 .form-group-custom label {
   font-family: var(--font-marathi);
   font-weight: 600;
