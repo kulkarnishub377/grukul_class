@@ -19,13 +19,35 @@
       });
     });
 
-    // Navbar scroll effect
+      
+    // Combine scroll handlers for better performance
+    let ticking = false;
     window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-      } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          const scrolled = window.pageYOffset;
+          
+          // Navbar scroll effect
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            if (scrolled > 50) {
+              navbar.classList.add('scrolled');
+              navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+              navbar.classList.remove('scrolled');
+              navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+            }
+          }
+          
+          // Parallax effect on hero section
+          const hero = document.querySelector('.hero-section');
+          if (hero && scrolled < window.innerHeight) {
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
       }
     });
 
@@ -108,4 +130,69 @@
           }
         );
       });
+      
+    // Add counter animation for hero stats
+    function animateCounter(element, target) {
+      const duration = 2000; // Fixed 2 second duration
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(progress * target);
+        element.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = target;
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
+    
+    // Trigger counter animation when stats become visible
+    const observerOptions = {
+      threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+          entry.target.classList.add('animated');
+          const h3Element = entry.target.querySelector('h3');
+          if (h3Element) {
+            const statsText = h3Element.textContent;
+            const number = parseInt(statsText.replace(/\D/g, ''));
+            if (!isNaN(number) && number > 0) {
+              h3Element.textContent = '0';
+              animateCounter(h3Element, number);
+            }
+          }
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.hero-stat').forEach(stat => {
+      observer.observe(stat);
+    });
+    
+    // Add smooth reveal animation for cards
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.card-modern, .subject-card, .testimonial-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      cardObserver.observe(card);
+    });
     
